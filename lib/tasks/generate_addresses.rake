@@ -1,5 +1,5 @@
 task generate_addresses: :environment do
-  ENV['count'].to_i.times do
-    Address.create(street: "King St. 22", city: "London")
+  ENV['N'].to_i.times do
+    Address.create(street: Faker::Address.street_address, city: Faker::Address.city)
   end
 end
