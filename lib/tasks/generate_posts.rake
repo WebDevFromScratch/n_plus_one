@@ -1,7 +1,9 @@
 task generate_posts: :environment do
-  user_count = User.count
+  def random_user
+    User.offset(rand(User.count)).first
+  end
 
   ENV['N'].to_i.times do
-    Post.create(body: Faker::Lorem.paragraphs, user_id: rand(1..user_count))
+    Post.create(body: Faker::Lorem.paragraphs, user_id: random_user.id)
   end
 end
