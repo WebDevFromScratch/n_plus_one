@@ -4,6 +4,6 @@ task generate_posts: :environment do
   end
 
   ENV['N'].to_i.times do
-    Post.create(body: Faker::Lorem.paragraphs, user_id: random_user.id)
+    Post.create(body: Faker::Lorem.paragraph, user_id: random_user.id)
   end
 end

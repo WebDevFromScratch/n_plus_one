@@ -1,1 +1,6 @@
-hey!
+<h1>All Posts</h1>
+<% @posts.each do |post| %>
+  <hr/>
+  <p><b><%= post.user_first_name %> <%= post.user_address_city %></b></p>
+  <p><%= post.body %></p>
+<% end %>
